@@ -1,0 +1,45 @@
+{
+  "name": "Research DEFI",
+  "nodes": [
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "id": "d6630c49-25f5-4e85-8d95-0e8118bfedbe",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [-1008, 2160],
+      "typeVersion": 1.2,
+      "credentials": {
+        "openAiApi": {
+          "id": "REDACTED",
+          "name": "OpenAI_token (private)"
+        }
+      },
+      "disabled": true
+    },
+    ...
+    {
+      "parameters": {
+        "chatId": "REDACTED_CHAT_ID",
+        "text": "={{ $json.summary }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "name": "Send a text message",
+      "credentials": {
+        "telegramApi": {
+          "id": "REDACTED",
+          "name": "Telegram Bot (private)"
+        }
+      }
+    }
+  ],
+  "connections": { /* unchanged */ },
+  "active": false,
+  "settings": { "executionOrder": "v1" }
+}
